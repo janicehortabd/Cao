@@ -40,6 +40,16 @@ class BDInstrumentedTest {
             assert(bd.isOpen)
         }
 
+        @Test
+        fun consegueInserirCategorias() {
+            val openHelper = BdCaoOpenHelper(getAppContext())
+            val bd = openHelper.writableDatabase
+
+            val categoria = Categoria("Cães de caça")
+            val id = TabelaCategorias(bd).insere(categoria.toContentValues())
+            assertNotEquals(-1, id)
+        }
+
     }
 
 
