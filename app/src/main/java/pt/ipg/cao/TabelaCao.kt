@@ -11,5 +11,9 @@ class TabelaCao(db: SQLiteDatabase) : TabelaBD(db, NOME_TABELA) {
 
     companion object {
         const val NOME_TABELA = "cao"
+        const val CAMPO_RACA = "raca"
+        const val CAMPO_ISBN = "isbn"
+        const val CAMPO_FK_CATEGORIA = "id_categoria"
+
     }
 }
