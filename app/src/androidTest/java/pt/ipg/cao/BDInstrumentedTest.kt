@@ -24,6 +24,7 @@ class BDInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("pt.ipg.cao", appContext.packageName)
     }
+
     class BdInstrumentedTest {
         private fun getAppContext(): Context =
             InstrumentationRegistry.getInstrumentation().targetContext
@@ -40,18 +41,46 @@ class BDInstrumentedTest {
             assert(bd.isOpen)
         }
 
+        private fun getWritableDatabase(): SQLiteDatabase {
+            val openHelper = BdCaoOpenHelper(getAppContext())
+            return openHelper.writableDatabase
+        }
+
         @Test
         fun consegueInserirCategorias() {
-            val openHelper = BdCaoOpenHelper(getAppContext())
-            val bd = openHelper.writableDatabase
+            val bd = getWritableDatabase()
+
+            val categoria = Categoria("Drama")
+            insereCategoria(bd, categoria)
+        }
+
+        private fun insereCategoria(
+            bd: SQLiteDatabase,
+            categoria: Categoria
+        ) {
+            categoria.id = TabelaCategorias(bd).insere(categoria.toContentValues())
+            assertNotEquals(-1, categoria.id)
+        }
+
+        @Test
+        fun consegueInserirLivros() {
+            val bd = getWritableDatabase()
 
             val categoria = Categoria("Cães de caça")
-            val id = TabelaCategorias(bd).insere(categoria.toContentValues())
-            assertNotEquals(-1, id)
+            insereCategoria(bd, categoria)
+
+            val cao1 = Cao("Pastor Alemão", categoria.id)
+            insereCao(bd, cao1)
+
+            val cao2 =
+                Cao("Labrador Retriever", categoria.id, "7117889789896")
+            insereCao(bd, cao2)
+        }
+
+        private fun insereCao(bd: SQLiteDatabase, cao: Cao) {
+            cao.id = TabelaCao(bd).insere(cao.toContentValues())
+            assertNotEquals(-1, cao.id)
         }
 
     }
-
-
-
 }
