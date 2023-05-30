@@ -11,6 +11,10 @@ class AdapterCao: RecyclerView.Adapter<AdapterCao.ViewHolderCao>() {
             field = value
             notifyDataSetChanged()
         }
+
+    override fun getItemCount(): Int {
+        return cursor?.count ?:0
+    }
     inner class ViewHolderCao(itemView: View) : ViewHolder(itemView){
 
     }
