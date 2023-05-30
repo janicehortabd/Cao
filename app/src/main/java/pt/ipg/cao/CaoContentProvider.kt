@@ -58,6 +58,10 @@ class CaoContentProvider : ContentProvider(){
         private const val URI_CAO = 200
         private const val  URI_CAO_ID = 201
 
+        private const val URI_BASE = Uri.parse("content://$AUTORIDADE")
+
+        val ENDERECO_CATEGORIAS = Uri.
+
          fun uriMatcher() = UriMatcher(UriMatcher.NO_MATCH).apply {}
         addURI(AUTORIDADE, CATEGORIAS,  100)
         addURI(AUTORIDADE, LIVROS,  100)

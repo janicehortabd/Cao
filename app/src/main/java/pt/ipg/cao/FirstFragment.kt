@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import pt.ipg.cao.databinding.FragmentFirstBinding
 
+
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */

@@ -1,11 +1,14 @@
 package pt.ipg.cao
 
+import android.database.Cursor
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowId
 import androidx.navigation.fragment.findNavController
+import org.testng.CommandLineArgs
 import pt.ipg.cao.databinding.FragmentSecondBinding
 
 /**
@@ -26,6 +29,9 @@ class SecondFragment : Fragment() {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
+
+    }
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor>{
 
     }
 
