@@ -7,22 +7,34 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="pt.ipg.cao.FirstFragment"
+        android:name="pt.ipg.cao.MenuPrincipalFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_menu_principal">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_listaCaoFragment"
+            app:destination="@id/listaCaoFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="pt.ipg.cao.SecondFragment"
+        android:name="pt.ipg.cao.SobreFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_sobre">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCaoFragment"
+        android:name="pt.ipg.cao.ListaCaoFragment"
+        android:label="fragment_lista_cao"
+        tools:layout="@layout/fragment_lista_cao" >
+        <action
+            android:id="@+id/action_listaCaoFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

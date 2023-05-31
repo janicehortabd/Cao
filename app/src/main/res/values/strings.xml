@@ -12,7 +12,7 @@ Exercício Programação Avançada\n
 Janice Horta
     </string>
     <string name="sobre">Sobre</string>
-    <string name="livros">Cão</string>
+    <string name="cao">Cão</string>
     <string name="categorias">Categorias</string>
     <string name="pesquisa">Pesquisa</string>
 </resources>
