@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".MenuPrincipalFragment">
 
     <Button
         android:id="@+id/buttonSobre"
@@ -16,11 +16,11 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonPesquisa" />
 
     <Button
-        android:id="@+id/buttonLivros"
+        android:id="@+id/buttonCao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_botoes_menu"
-        android:text="@string/livros"
+        android:text="@string/cao"
         app:layout_constraintEnd_toEndOf="@+id/buttonCategorias"
         app:layout_constraintStart_toStartOf="@+id/buttonCategorias"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
         android:text="@string/categorias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLivros" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCao" />
 
     <Button
         android:id="@+id/buttonPesquisa"
