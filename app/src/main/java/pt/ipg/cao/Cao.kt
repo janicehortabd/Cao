@@ -2,20 +2,18 @@ package pt.ipg.cao
 
 import android.content.ContentValues
 import android.database.Cursor
-import android.icu.util.Calendar
-import android.os.Build
+import java.util.Calendar
 import android.provider.BaseColumns
-import androidx.annotation.RequiresApi
 
 
 data class Cao(
     var raca: String,
     var idCategoria: Long,
     var isbn: String? = null,
-    var dataNascimento: java.util.Calendar = null,
+    var dataNascimento: Calendar? = null,
     var id: Long = -1
 ) {
-    @RequiresApi(Build.VERSION_CODES.N)
+
     fun toContentValues() : ContentValues {
         val valores = ContentValues()
 
@@ -27,7 +25,7 @@ data class Cao(
         return valores
     }
     companion object {
-        @RequiresApi(Build.VERSION_CODES.N)
+
         fun fromCursor(cursor: Cursor) : Cao {
             val posId = cursor.getColumnIndex(BaseColumns._ID)
             val posRaca = cursor.getColumnIndex(TabelaCao.CAMPO_RACA)
