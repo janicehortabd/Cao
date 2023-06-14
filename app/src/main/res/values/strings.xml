@@ -15,4 +15,7 @@ Janice Horta
     <string name="cao">Cão</string>
     <string name="categorias">Categorias</string>
     <string name="pesquisa">Pesquisa</string>
+    <string name="adicionar">adicionar</string>
+    <string name="editar">editar</string>
+    <string name="eliminar">eliminar</string>
 </resources>
