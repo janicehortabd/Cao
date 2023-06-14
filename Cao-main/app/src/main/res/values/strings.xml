@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Cão</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Voltar</string>
+
+    <string name="sobre_app">
+Base de dados de Cão\n\n
+Exercício Programação Avançada\n
+Janice Horta
+    </string>
+    <string name="sobre">Sobre</string>
+    <string name="cao">Cão</string>
+    <string name="categorias">Categorias</string>
+    <string name="pesquisa">Pesquisa</string>
+    <!---TODO:Remove or Change this placeholder text -->
+    <string name ="adicionar">Adicionar</string>
+    <string name ="editar">Editar</string>
+    <string name ="eliminar">Eliminar</string>
+
+</resources>
