@@ -3,6 +3,7 @@ package pt.ipg.cao
 import android.database.Cursor
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -22,6 +23,8 @@ class ListaCaoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +51,11 @@ class ListaCaoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(ID_LOADER_CAO, null, this)
+
+        val activity = activity as MainActivity
+        activity.idMenuAtual = R.menu.menu_lista_cao
+
+
     }
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
@@ -67,4 +75,6 @@ class ListaCaoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
         adapterCao!!.cursor = data
     }
+
+
 }
