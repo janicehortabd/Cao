@@ -1,11 +1,10 @@
 package pt.ipg.cao
 
-import android.database.Cursor
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import pt.ipg.cao.databinding.FragmentSobreBinding
 
@@ -37,6 +36,10 @@ class SobreFragment : Fragment() {
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
+        val activity = activity as MainActivity
+        activity.fragment = this
+        activity.idMenuAtual = R.menu.menu_main
+
     }
 
     override fun onDestroyView() {
