@@ -20,6 +20,16 @@ class ListaCaoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     private var _binding: FragmentListaCaoBinding? = null
     private val binding get() = _binding!!
 
+    var caoSelecionado : Cao? = null
+        set(value) {
+            field = value
+
+            val mostrarEliminarAlterar = (value != null)
+
+            val activity = activity as MainActivity
+            activity.mostraOpcaoMenu(R.id.action_editar, mostrarEliminarAlterar)
+            activity.mostraOpcaoMenu(R.id.action_eliminar, mostrarEliminarAlterar)
+        }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
